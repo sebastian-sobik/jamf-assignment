@@ -1,0 +1,70 @@
+// Importing fonts - Antonio(700), Open Sans(400, 700)
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Open+Sans:wght@400;700&display=swap');
+
+// Colors
+    $clr-primary: #000000;
+    $clr-secondary: #C4C4C4;
+    $clr-bg: #FFFFFF;
+    $clr-decoration: #E1E5EA;
+    $clr-input-error: #A5A5A5;
+
+// Font family
+    $font-family-primary: 'Open Sans', sans-serif;
+    $font-family-secondary: 'Antonio', sans-serif;
+
+// Font size
+    // Main page
+    $font-size-header: 1.25rem;
+    $font-size-headline: 4rem;
+    $font-size-subheader: 2rem;
+    $font-size-paragraph: 1.125rem;
+    $font-size-button: 1.125rem;
+
+    // Product form
+    $font-size-form-header: $font-size-subheader;
+    $font-size-input-label: 1rem;
+    $font-size-input-error: 0.875rem;
+
+// Font weight
+    $font-weight-regular: 400;
+    $font-weight-bold: 700;
+
+    $font-weight-paragraph:     $font-weight-regular;
+    $font-weight-headline:      $font-weight-bold;
+    $font-weight-header:        $font-weight-bold;
+    $font-weight-product-title: $font-weight-regular;
+    $font-weight-product-price: $font-weight-bold;
+
+// Component size
+
+    // tego nie jestem pewien
+    $wrapper-width: 1200px;
+
+    $header-height: 130px;
+
+    $form-width: 630px;
+
+    $headline-image-width: 478px;
+    $headline-image-height: 758px;
+
+    $card-height: 392px;
+    $card-width: 280px;
+    $item-image-width: 280px;
+    $item-image-height: 280px;
+
+    $decoration-width: 480px;
+    $decoration-height: 920px;
+
+    $button-width: 220px;
+    $button-height: 56px;
+
+
+// Margins
+    $margin-huge: 8rem;
+    $margin-big: 6rem;
+    $margin-medium: 3.375rem;
+    $margin-small: 1.25rem;
+    $margin-petit: 0.5rem;
+
+    $items-vertical-gap: 2.125rem;
+    $items-horizontal-gap: 1.3125rem;
