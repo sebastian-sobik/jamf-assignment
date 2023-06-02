@@ -1,0 +1,31 @@
+@use "../../_variables.scss" as *;
+@use "../../_functions.scss" as *;
+
+.header {
+  position: relative;
+  @include flex(space-between, center);
+  height: $header-height;
+  margin-bottom: $margin-big ;
+
+  .header__logo,
+  .header__button {
+    height: 45px;
+  }
+
+  .header__button {
+    @include flex(null, center);
+    gap: $margin-small;
+
+    font-size: $font-size-header;
+    font-weight: $font-weight-header;
+
+    .icon__circle {
+      transition: transform 300ms ease-out;
+    }
+
+    &:hover .icon__circle {
+      transform: rotate(180deg);
+    }
+
+  }
+}
