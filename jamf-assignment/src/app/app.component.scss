@@ -1,0 +1,117 @@
+@use "../_variables.scss" as *;
+@use "../_functions.scss" as *;
+
+.wrapper {
+  max-width: $wrapper-width;
+  margin: 0 auto;
+  font-family: $font-family-primary;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 580px 1fr;
+  gap: $margin-small;
+}
+
+.left {
+
+}
+
+.img-container {
+  position: relative;
+  width: $decoration-width;
+}
+
+.decorator {
+  content: '';
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  z-index: -1;
+  background-color: $clr-decoration;
+  top: 50%;
+  left: 580px - $decoration-width;
+  transform: translateY(-50%);
+}
+
+.intro__header {
+  width: 90%;
+  font-family: $font-family-secondary;
+  font-size: $font-size-headline;
+  font-weight: $font-weight-headline;
+  line-height: 112.5%;
+  margin-bottom: $margin-big-med;
+}
+
+.intro {
+  position: relative;
+  padding: $margin-medium 0;
+  margin-bottom: $margin-big-med;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -2.5rem - $margin-small;
+    background-color: $clr-bg;
+    z-index: -1;
+  }
+}
+
+.intro__text {
+  position: relative;
+  font-size: $font-size-paragraph;
+  line-height: 155.5%;
+  font-weight: $font-weight-paragraph;
+  margin-bottom: $margin-medium;
+  width: 80%;
+}
+
+.intro__button {
+  width: $button-width;
+  height: $button-height;
+  background: $clr-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-button;
+  letter-spacing: -2%;
+}
+
+.products {
+  margin-bottom: 999px;
+}
+
+h2 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-subheader;
+  margin-bottom: $margin-medium;
+  line-height: 87.5%;
+}
+
+.products__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $items-horizontal-gap;
+}
+
+.product__image {
+  width: $item-image-width;
+  height: $item-image-height;
+  margin-bottom: $margin-petit;
+}
+
+.product__name {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-product-title;
+  font-size: $font-size-product-name;
+  margin-bottom: $margin-petit;
+}
+
+.product__price {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-product-price;
+  font-size: $font-size-product-price;
+}

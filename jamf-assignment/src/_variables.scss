@@ -1,6 +1,3 @@
-// Importing fonts - Antonio(700), Open Sans(400, 700)
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Open+Sans:wght@400;700&display=swap');
-
 // Colors
     $clr-primary: #000000;
     $clr-secondary: #C4C4C4;
@@ -19,6 +16,10 @@
     $font-size-subheader: 2rem;
     $font-size-paragraph: 1.125rem;
     $font-size-button: 1.125rem;
+
+    // Product
+    $font-size-product-name: 1.25rem;
+    $font-size-product-price: 1.25rem;
 
     // Product form
     $font-size-form-header: $font-size-subheader;
@@ -62,6 +63,7 @@
 // Margins
     $margin-huge: 8rem;
     $margin-big: 6rem;
+    $margin-big-med: 4.6875rem;
     $margin-medium: 3.375rem;
     $margin-small: 1.25rem;
     $margin-petit: 0.5rem;
