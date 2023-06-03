@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-header></app-header>
+  <app-header (openSidebar)="openSidebar()"></app-header>
   <div class="grid">
     <aside class="left">
       <div class="img-container">
@@ -11,24 +11,23 @@
       <h1 class="intro__header">Zadanie rekrutacyjne na staż w Jamf</h1>
       <section class="intro">
         <p class="intro__text">Poniżej wyświetlana jest lista produktów. Twoim zadaniem jest stworzenie mechanizmu, który będzie dodawał nowy produkt do listy. Powodzenia!</p>
-        <button class="intro__button">Dodaj nowy produkt</button>
+        <button (click)="openSidebar()" class="intro__button">Dodaj nowy produkt</button>
       </section>
-      <section class="products">
+      <section *ngIf="!isMobileLayout" class="products" >
         <h2>Urządzenia Apple</h2>
-        <div class="products__list">
-          <div class="product">
-            <img class="product__image" src="../assets/product_image.png" alt="Zdjęcie produktu Apple">
-            <h3 class="product__name">MacBook Air 13”</h3>
-            <span class="product__price">4999,00 zł</span>
-          </div>
-          <div class="product">
-            <img class="product__image" src="../assets/product_image.png" alt="Zdjęcie produktu Apple">
-            <h3 class="product__name">MacBook Air 13”</h3>
-            <span class="product__price">4999,00 zł</span>
-          </div>
-
-        </div>
+        <app-product-list
+          *ngIf="products$ | async as products"
+          [products]="products">
+        </app-product-list>
       </section>
     </main>
   </div>
+  <section *ngIf="isMobileLayout" class="products" >
+    <h2>Urządzenia Apple</h2>
+    <app-product-list
+      *ngIf="products$ | async as products"
+      [products]="products">
+    </app-product-list>
+  </section>
 </div>
+<app-sidebar-form></app-sidebar-form>
