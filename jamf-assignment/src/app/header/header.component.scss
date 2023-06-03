@@ -5,7 +5,7 @@
   position: relative;
   @include flex(space-between, center);
   height: $header-height;
-  margin-bottom: $margin-big ;
+  margin-bottom: $margin-huge ;
 
   .header__logo,
   .header__button {
@@ -25,6 +25,12 @@
 
     &:hover .icon__circle {
       transform: rotate(180deg);
+    }
+
+    @media (max-width: 520px) {
+      .icon__description {
+        display: none;
+      }
     }
 
   }
