@@ -3,8 +3,9 @@
     $clr-secondary: #C4C4C4;
     $clr-bg: #FFFFFF;
     $clr-decoration: #E1E5EA;
-    $clr-input-error: #A5A5A5;
-
+    $clr-input-message: #A5A5A5;
+    $clr-input-box: #888888;
+    $clr-input-box-error: #CC0000;
 // Font family
     $font-family-primary: 'Open Sans', sans-serif;
     $font-family-secondary: 'Antonio', sans-serif;
@@ -24,7 +25,7 @@
     // Product form
     $font-size-form-header: $font-size-subheader;
     $font-size-input-label: 1rem;
-    $font-size-input-error: 0.875rem;
+    $font-size-input-message: 0.875rem;
 
 // Font weight
     $font-weight-regular: 400;
@@ -44,6 +45,7 @@
     $header-height: 130px;
 
     $form-width: 630px;
+    $form-input-height: 56px;
 
     $headline-image-width: 478px;
     $headline-image-height: 758px;
@@ -60,8 +62,8 @@
     $button-height: 56px;
 
 
-// Margins
-    $margin-huge: 8rem;
+// Margin
+    $margin-huge: 8.75rem;
     $margin-big: 6rem;
     $margin-big-med: 4.6875rem;
     $margin-medium: 3.375rem;
@@ -70,3 +72,10 @@
 
     $items-vertical-gap: 2.125rem;
     $items-horizontal-gap: 1.3125rem;
+
+// Padding
+    $padding-slider: 150px 4.25rem;
+
+
+// Shadow
+    $box-shadow-slider: -10px 0 10px 0 rgba(0, 0, 0, 0.1);
