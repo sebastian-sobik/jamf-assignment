@@ -1,11 +1,23 @@
 @use "../../_variables.scss" as *;
 @use "../../_functions.scss" as *;
 
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 98;
+  width: 100%;
+}
+
 .header {
   position: relative;
-  @include flex(space-between, center);
+  width: 100%;
+  max-width: $wrapper-width;
   height: $header-height;
-  margin-bottom: $margin-huge ;
+
+  margin: 0 auto $margin-huge auto;
+  background: $clr-bg;
+
+  @include flex(space-between, center);
 
   .header__logo,
   .header__button {
@@ -26,12 +38,15 @@
     &:hover .icon__circle {
       transform: rotate(180deg);
     }
+  }
+}
 
-    @media (max-width: 520px) {
-      .icon__description {
-        display: none;
-      }
-    }
+@media (max-width: 520px) {
+  .icon__description {
+    display: none;
+  }
 
+  .header {
+    margin-bottom: $margin-medium;
   }
 }

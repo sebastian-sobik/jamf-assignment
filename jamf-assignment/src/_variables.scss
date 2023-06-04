@@ -74,8 +74,10 @@
     $items-horizontal-gap: 1.3125rem;
 
 // Padding
-    $padding-slider: 150px 4.25rem;
+    $padding-slider-M: 150px 4.25rem;
+    $padding-slider-S: 150px 2.25rem;
 
 
 // Shadow
     $box-shadow-slider: -10px 0 10px 0 rgba(0, 0, 0, 0.1);
+    $box-shadow-header: 0 -3px 10px 0  rgba(0, 0, 0, 0.35);

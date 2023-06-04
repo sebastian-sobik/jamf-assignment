@@ -1,5 +1,5 @@
 <aside class="slider" [ngClass]="{'closed' : closed$ | async}">
-  <nav class="slider__nav">
+  <nav class="slider__nav" aria-label="Close form">
     <button
       (click)="closeForm()"
     ><img src="../assets/cross-icon.svg" alt="Close form button"></button>
@@ -10,7 +10,7 @@
     (ngSubmit)="onSubmit()"
     autocomplete="off"
   >
-    <section class="form__group">
+    <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-name">Nazwa produktu</label>
         <span [ngClass]="getClassesWithError('name')">Pole wymagane</span>
@@ -20,8 +20,8 @@
         id="product-name"
         formControlName="name"
       >
-    </section>
-    <section class="form__group">
+    </div>
+    <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-price">Cena produktu</label>
         <span [ngClass]="getClassesWithError('price')">Pole wymagane</span>
@@ -31,8 +31,8 @@
         id="product-price"
         formControlName="price"
       >
-    </section>
-    <section class="form__group">
+    </div>
+    <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-image-url">Adres URL obrazka</label>
         <span [ngClass]="getClassesWithError('imageURL')">Pole wymagane</span>
@@ -42,7 +42,7 @@
         id="product-image-url"
         formControlName="imageURL"
       >
-    </section>
+    </div>
     <button
       type="submit"
       [disabled]="!form.valid"

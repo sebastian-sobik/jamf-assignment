@@ -4,10 +4,6 @@
 :host {
   display: block;
   padding: 0 50px;
-
-  @media (max-width: 520px) {
-    padding: 0 5%;
-  }
 }
 
 .wrapper {
@@ -148,3 +144,8 @@ h2 {
   }
 }
 
+@media (max-width: 520px) {
+  :host {
+    padding: 0 20px;
+  }
+}

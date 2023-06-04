@@ -8,3 +8,4 @@ import {Component, EventEmitter, Output} from '@angular/core';
 export class HeaderComponent {
   @Output() openSidebar = new EventEmitter<void>;
 }
+``

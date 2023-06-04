@@ -1,9 +1,11 @@
+<app-header (openSidebar)="openSidebar()"></app-header>
 <div class="wrapper">
-  <app-header (openSidebar)="openSidebar()"></app-header>
   <div class="grid">
     <aside class="left">
       <div class="img-container">
-        <img class="main-image" src="../assets/main-picture.png" alt="Zdjęcie pokazujące produkty Apple">
+        <picture>
+          <img class="main-image" src="../assets/main-picture.png" alt="Zdjęcie pokazujące produkty Apple">
+        </picture>
         <div class="decorator"></div>
       </div>
     </aside>
@@ -14,19 +16,17 @@
         <button (click)="openSidebar()" class="intro__button">Dodaj nowy produkt</button>
       </section>
       <section *ngIf="!isMobileLayout" class="products" >
-        <h2>Urządzenia Apple</h2>
-        <app-product-list
-          *ngIf="products$ | async as products"
-          [products]="products">
-        </app-product-list>
+        <article>
+          <h2>Urządzenia Apple</h2>
+          <app-product-list *ngIf="products$ | async as products" [products]="products">
+          </app-product-list>
+        </article>
       </section>
     </main>
   </div>
   <section *ngIf="isMobileLayout" class="products" >
     <h2>Urządzenia Apple</h2>
-    <app-product-list
-      *ngIf="products$ | async as products"
-      [products]="products">
+    <app-product-list *ngIf="products$ | async as products" [products]="products">
     </app-product-list>
   </section>
 </div>
