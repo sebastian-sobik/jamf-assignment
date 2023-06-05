@@ -50,3 +50,20 @@
     margin-bottom: $margin-medium;
   }
 }
+
+.headerCopy {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: -50%;
+  z-index: -1;
+
+  transition: box-shadow 400ms ease-out;
+}
+
+.shadow {
+  box-shadow: $box-shadow-header;
+  -webkit-box-shadow: $box-shadow-header;
+  -moz-box-shadow: $box-shadow-header;
+}
+

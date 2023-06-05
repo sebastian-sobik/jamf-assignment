@@ -1,12 +1,15 @@
 <header class="header">
-  <a href="#" aria-label="Return to Homepage">
+  <a routerLink="#" aria-label="Return to Homepage">
     <img class="header__logo" src="../assets/jamf-logo.svg" alt="Jamf">
   </a>
-  <button
-    (click)="openSidebar.emit()"
-    class="header__button"
-  >
-    <span class="icon__description">Dodaj nowy produkt</span>
-    <img class="icon__circle" src="../assets/plus-circle-icon.svg" alt="Przycisk dodawania produktu">
-  </button>
+  <div>
+    <button
+      (click)="openSidebar.emit()"
+      class="header__button"
+    >
+      <span class="icon__description">Dodaj nowy produkt</span>
+      <img class="icon__circle" src="../assets/plus-circle-icon.svg" alt="Przycisk dodawania produktu">
+    </button>
+  </div>
+  <div [ngClass]="{headerCopy : true, shadow : this.scrolled}"></div>
 </header>
