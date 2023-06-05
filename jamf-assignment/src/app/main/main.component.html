@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="grid">
+    <aside class="left">
+      <div class="img-container">
+        <picture>
+          <img class="main-image" src="../assets/main-picture.png" alt="Different Apple products">
+        </picture>
+        <div class="decorator"></div>
+      </div>
+    </aside>
+    <main class="right">
+      <h1 class="intro__heading">Zadanie rekrutacyjne na staż w Jamf</h1>
+      <section class="intro" aria-label="Description">
+        <p class="intro__text">Poniżej wyświetlana jest lista produktów. Twoim zadaniem jest stworzenie mechanizmu, który będzie dodawał nowy produkt do listy. Powodzenia!</p>
+        <button (click)="openSidebar()" class="intro__button">Dodaj nowy produkt</button>
+        <a
+          routerLink="./all-products"
+          role="navigation"
+          aria-label="Przenieś do strony z wszystkimi elementami"
+        ><button class="router__button">Wszystkie produkty</button></a>
+      </section>
+      <section *ngIf="!isMobileLayout" class="products" >
+        <article>
+          <h2>Urządzenia Apple</h2>
+          <app-product-list *ngIf="products$ | async as products" [products]="products">
+          </app-product-list>
+        </article>
+      </section>
+    </main>
+  </div>
+  <section *ngIf="isMobileLayout" class="products">
+    <h2>Urządzenia Apple</h2>
+    <app-product-list *ngIf="products$ | async as products" [products]="products">
+    </app-product-list>
+  </section>
+</div>

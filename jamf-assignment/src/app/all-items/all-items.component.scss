@@ -1,0 +1,16 @@
+@use "../../_variables.scss" as *;
+@use "../../_functions.scss" as *;
+@use "../../_mixins.scss" as *;
+
+:host {
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $wrapper-width;
+  margin: 0 auto;
+  padding: 0 0 100px 0;
+
+  font-family: $font-family-primary;
+}

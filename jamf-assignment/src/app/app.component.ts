@@ -10,18 +10,8 @@ import {SidebarStateService} from "./sidebar-state.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  isMobileLayout = false;
-  products$: Observable<Product[]> = this.productsFacade.selectProducts$();
-
-  constructor(protected productsFacade: ProductFacadeService,
-              protected sidebarState: SidebarStateService) {
-  }
-
-  ngOnInit() {
-    window.onresize = () => {
-      this.isMobileLayout = window.innerWidth <= 1070
-    };
+export class AppComponent {
+  constructor(protected sidebarState: SidebarStateService) {
   }
 
   openSidebar() {

@@ -1,0 +1,139 @@
+@use "../../_variables.scss" as *;
+@use "../../_functions.scss" as *;
+@use "../../_mixins.scss" as *;
+
+.wrapper {
+  width: 100%;
+  max-width: $wrapper-width;
+  margin: 0 auto;
+
+  font-family: $font-family-primary;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 580px auto;
+  gap: $main-grid-gap;
+}
+
+.img-container {
+  position: relative;
+  width: $decoration-width;
+  top: $img-offset;
+}
+
+.decorator {
+  width: 100%;
+  height: 120%;
+  background-color: $clr-bg-decoration;
+
+  position: absolute;
+  top: 50%;
+  left: 580px - $decoration-width;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+.intro__heading {
+  width: 90%;
+}
+
+.intro {
+  position: relative;
+  padding: $margin-medium 0;
+  margin-bottom: $margin-big;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $clr-bg;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -2.5rem - $margin-small;
+    z-index: -1;
+  }
+}
+
+.intro__text {
+  position: relative;
+  width: 80%;
+}
+
+.intro__button {
+  @include defaultBtn;
+  margin-right: 10px;
+}
+
+.router__button {
+  @include defaultBtn;
+  background-color: white;
+  border: 3px solid $clr-secondary
+}
+
+.products {
+  margin-bottom: 150px;
+}
+
+// Media queries
+
+@media (max-width: 1200px){
+  .intro__text {
+    width: 100%;
+  }
+
+  .intro__header {
+    width: 100%;
+    margin-bottom: $margin-medium;
+  }
+
+  .intro button {
+    width: 100%;
+    margin-bottom: $margin-small;
+  }
+}
+
+@media (max-width: 1070px) {
+  .grid {
+    grid-template-columns: 400px auto;
+  }
+  .img-container {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .left {
+    order: 2;
+  }
+
+  .decorator {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+
+  .img-container {
+    display: none;
+  }
+
+  .intro button {
+    width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro button {
+    width: 100%;
+    margin-bottom: $margin-small;
+  }
+}

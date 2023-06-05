@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <app-product-list
+    *ngIf="$products | async as products"
+    [products]="products"
+  ></app-product-list>
+</div>

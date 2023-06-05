@@ -48,7 +48,7 @@ table {
 }
 
 /*
-  My resets
+  Custom settings
 */
 
 *, *::before, *::after {
@@ -66,4 +66,9 @@ button {
   &:hover {
     cursor: pointer;
   }
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

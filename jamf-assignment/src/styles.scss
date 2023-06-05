@@ -1,2 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @forward "./reset";
+@use "./_variables.scss" as *;
+@use "./_functions.scss" as *;
+
+h1 {
+  font-family: $font-family-secondary;
+  font-size: $font-size-headline;
+  font-weight: $font-weight-headline;
+  line-height: 112.5%;
+  letter-spacing: -2%;
+  margin-bottom: $margin-big;
+}
+
+h2 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-subheader;
+  margin-bottom: $margin-medium;
+  line-height: 87.5%;
+}
+
+p {
+  font-size: $font-size-paragraph;
+  font-weight: $font-weight-paragraph;
+  line-height: 155.5%;
+  margin-bottom: $margin-medium;
+}
+
+

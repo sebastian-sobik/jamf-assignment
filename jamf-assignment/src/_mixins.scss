@@ -1,0 +1,21 @@
+@use "./_variables.scss" as *;
+@use "./_functions.scss" as *;
+
+@mixin defaultBtn() {
+    width: $button-width;
+    height: $button-height;
+    background: $clr-secondary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-button;
+    letter-spacing: -2%;
+    transition: filter 50ms ease-out;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:hover[disabled] {
+      cursor: default;
+      filter: brightness(1.05);
+    }
+}

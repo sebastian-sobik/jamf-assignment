@@ -2,10 +2,11 @@
     $clr-primary: #000000;
     $clr-secondary: #C4C4C4;
     $clr-bg: #FFFFFF;
-    $clr-decoration: #E1E5EA;
+    $clr-bg-decoration: #E1E5EA;
     $clr-input-message: #A5A5A5;
-    $clr-input-box: #888888;
+    $clr-input-box-border: #888888;
     $clr-input-box-error: #CC0000;
+
 // Font family
     $font-family-primary: 'Open Sans', sans-serif;
     $font-family-secondary: 'Antonio', sans-serif;
@@ -39,7 +40,6 @@
 
 // Component size
 
-    // tego nie jestem pewien
     $wrapper-width: 1200px;
 
     $header-height: 130px;
@@ -47,8 +47,8 @@
     $form-width: 630px;
     $form-input-height: 56px;
 
-    $headline-image-width: 478px;
-    $headline-image-height: 758px;
+    //$headline-image-width: 478px;
+    //$headline-image-height: 758px;
 
     $card-height: 392px;
     $card-width: 280px;
@@ -56,26 +56,31 @@
     $item-image-height: 280px;
 
     $decoration-width: 480px;
-    $decoration-height: 920px;
+    $img-offset: -26px;
+    //$decoration-height: 920px;
 
     $button-width: 220px;
     $button-height: 56px;
 
 
 // Margin
-    $margin-huge: 8.75rem;
-    $margin-big: 6rem;
-    $margin-big-med: 4.6875rem;
+    $margin-huge: 7.625rem;
+    //$margin-huge: 8.75rem;
+    //$margin-big: 6rem;
+    $margin-big: 4.6875rem;
     $margin-medium: 3.375rem;
     $margin-small: 1.25rem;
     $margin-petit: 0.5rem;
 
-    $items-vertical-gap: 2.125rem;
+    //$items-vertical-gap: 2.125rem;
     $items-horizontal-gap: 1.3125rem;
+    $main-grid-gap: 1.5625rem;
 
 // Padding
     $padding-slider-M: 150px 4.25rem;
     $padding-slider-S: 150px 2.25rem;
+    $padding-app-M   : 0 50px;
+    $padding-app-S   : 0 20px;
 
 
 // Shadow
