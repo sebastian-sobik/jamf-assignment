@@ -1,14 +1,14 @@
-<div *ngIf="products" class="products__list">
-  <div *ngFor="let product of products" class="product">
+<div *ngIf="products" class="products__list" aria-label="Products for sell">
+  <div *ngFor="let product of products" class="product" aria-label="Product">
     <div class="product__image">
       <img
         src="{{product.imageURL}}"
-        alt="{{'Zdjęcie ' + product.name}}"
+        alt="{{product.name}}"
         (error)="defaultImage($event)"
       >
     </div>
-    <h3 class="product__name">{{product.name}}</h3>
-    <span class="product__price">{{product.price | currency:'PLN':'zł':'.2-2':'fr'}}</span>
+    <h3 class="product__name" aria-label="Product name">{{product.name}}</h3>
+    <span class="product__price" aria-label="Product price">{{product.price | currency:'PLN':'zł':'.2-2':'fr'}}</span>
   </div>
 </div>
 
