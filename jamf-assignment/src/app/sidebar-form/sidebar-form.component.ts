@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ProductFacadeService} from "../product-facade.service";
 import {SidebarStateService} from "../sidebar-state.service";
@@ -11,14 +11,15 @@ import {SidebarStateService} from "../sidebar-state.service";
 export class SidebarFormComponent {
   form: FormGroup;
   closed$ = this.sidebarState.selectState$();
+  errorMessage = 'Błedny adres URL'
 
   constructor(protected fb: FormBuilder,
               protected productsFacade: ProductFacadeService,
               protected sidebarState: SidebarStateService
   ) {
     this.form = this.fb.group({
-      name: ['', Validators.compose([Validators.required])],
-      price: ['', Validators.compose([Validators.required])],
+      name: ['', Validators.compose([Validators.required, Validators.pattern("^[^\\s]+(\\s+[^\\s]+)*$")])],
+      price: ['', Validators.compose([Validators.required, Validators.min(0.1)])],
       imageURL: ['',
         Validators.compose([
           Validators.required,
@@ -29,12 +30,8 @@ export class SidebarFormComponent {
   }
 
   onSubmit() {
-    console.log(this.form);
     if (this.form.valid) {
-      console.log(this.form.value)
-      this.productsFacade.addProduct(
-        this.form.value
-      )
+      this.productsFacade.addProduct(this.form.value)
     }
 
     this.closeForm();
@@ -45,10 +42,29 @@ export class SidebarFormComponent {
     this.sidebarState.close();
   }
 
-  getClassesWithError(inputName: string) {
-    return {
-      input__message: true,
-      error: this.form.controls[inputName].invalid && this.form.controls[inputName].touched
+  checkError(customMessage: string, controlName : string) : string {
+    const control = this.form.controls[controlName];
+    if(!control.errors || !control.touched || control.pristine) return '';
+
+    if(control.errors['required']) {
+      return 'Pole nie może być puste';
+    } else if(control.invalid){
+      return customMessage;
     }
+
+    return ''
   }
+
+  getNameInputError() {
+    return this.checkError("Nazwa nie może się zaczynać lub kończyć spacją", 'name');
+  }
+
+  getPriceInputError() {
+    return this.checkError("Cena musi być dodatnia", 'price');
+  }
+
+  getUrlInputError() {
+    return this.checkError("Link musi się zaczynać 'https://'", 'imageURL');
+  }
+
 }

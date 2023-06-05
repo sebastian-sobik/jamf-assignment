@@ -13,19 +13,21 @@
     <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-name">Nazwa produktu</label>
-        <span [ngClass]="getClassesWithError('name')">Pole wymagane</span>
+        <span class="input__message">Pole wymagane</span>
       </p>
       <input
         type="text"
         id="product-name"
         formControlName="name"
         aria-required="true"
+        maxlength="50"
       >
+      <app-error *ngIf="getNameInputError() as message" [message]="message"></app-error>
     </div>
     <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-price">Cena produktu</label>
-        <span [ngClass]="getClassesWithError('price')">Pole wymagane</span>
+        <span class="input__message">Pole wymagane</span>
       </p>
       <input
         type="number"
@@ -33,11 +35,12 @@
         formControlName="price"
         aria-required="true"
       >
+      <app-error *ngIf="getPriceInputError() as message" [message]="message"></app-error>
     </div>
     <div class="form__group">
       <p class="input__info">
         <label class="input__label" for="product-image-url">Adres URL obrazka</label>
-        <span [ngClass]="getClassesWithError('imageURL')">Pole wymagane</span>
+        <span class="input__message">Pole wymagane</span>
       </p>
       <input
         type="url"
@@ -45,6 +48,7 @@
         formControlName="imageURL"
         aria-required="true"
       >
+      <app-error *ngIf="getUrlInputError() as message" [message]="message"></app-error>
     </div>
     <button
       type="submit"

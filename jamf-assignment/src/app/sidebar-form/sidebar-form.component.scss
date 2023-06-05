@@ -1,26 +1,23 @@
 @use "../../_variables.scss" as *;
 @use "../../_functions.scss" as *;
-
-h2 {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-bold;
-  font-size: $font-size-subheader;
-  margin-bottom: $margin-medium;
-  line-height: 87.5%;
-}
+@use "../../_mixins.scss" as *;
 
 .slider {
-  font-family: $font-family-primary;
   position: fixed;
-  width: $form-width;
-  max-width: 85%;
-  height: 100%;
   top: 0;
   right: 0;
   z-index: 99;
-  background-color: white;
-  box-shadow: $box-shadow-slider;
+
+  overflow-y: scroll;
+
+  max-width: 85%;
+  width: $form-width;
+  height: 100%;
   padding: $padding-slider-M;
+
+  font-family: $font-family-primary;
+  background-color: $clr-bg;
+  box-shadow: $box-shadow-slider;
 
   transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1.0);
 
@@ -42,17 +39,18 @@ h2 {
   position: absolute;
   top: 2.5rem;
   right: 2.5rem;
+
   display: flex;
   justify-content: right;
-  margin-bottom: $margin-big-med;
 
+  margin-bottom: $margin-big;
 
   button {
     transition: transform 300ms ease-out;
-    height: max-content;
-  }
-  button:hover {
-    transform: rotate(180deg);
+
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
 }
 form {
@@ -61,33 +59,20 @@ form {
 
     input {
       height: $form-input-height;
-      border-color: $clr-input-box;
       padding: $margin-petit $margin-small;
+
+      border-color: $clr-input-box-border;
+
       font-size: $font-size-input-label;
 
-      &.ng-invalid.ng-touched {
+      &.ng-invalid.ng-touched.ng-dirty {
         border-color: $clr-input-box-error;
       }
     }
   }
 
   button {
-    width: $button-width;
-    height: $button-height;
-    background: $clr-secondary;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-button;
-    letter-spacing: -2%;
-    transition: filter 50ms ease-out;
-
-    &:hover {
-      filter: brightness(1.1);
-    }
-
-    &:hover[disabled] {
-      cursor: default;
-      filter: brightness(1.05);
-    }
+    @include defaultBtn;
   }
 }
 

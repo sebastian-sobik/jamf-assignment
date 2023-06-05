@@ -1,0 +1,14 @@
+@use "../../../_variables.scss" as *;
+@use "../../../_functions.scss" as *;
+@use "../../../_mixins.scss" as *;
+
+.error_message {
+  width: 100%;
+  margin-top: $margin-petit;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-input-message;
+  background: #fbacac;
+  border-left: 10px solid $clr-input-box-error;
+  border-radius: 0.2em;
+  padding: 1em;
+}
