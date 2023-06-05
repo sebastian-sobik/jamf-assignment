@@ -10,6 +10,7 @@ import {SidebarStateService} from "../sidebar-state.service";
 })
 export class SidebarFormComponent {
   form: FormGroup;
+  formData : FormData;
   closed$ = this.sidebarState.selectState$();
   errorMessage = 'Błedny adres URL'
 
@@ -23,17 +24,19 @@ export class SidebarFormComponent {
       imageURL: ['',
         Validators.compose([
           Validators.required,
-          Validators.pattern("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)")
+          Validators.pattern("^blob:|https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)")
         ])
-      ]
+      ],
+      imageFile: ['']
     })
   }
 
   onSubmit() {
+    this.formData  = new FormData();
+    this.formData.append('file', this.form.get('imageFile')?.value);
     if (this.form.valid) {
       this.productsFacade.addProduct(this.form.value)
     }
-
     this.closeForm();
   }
 
@@ -67,4 +70,11 @@ export class SidebarFormComponent {
     return this.checkError("Link musi się zaczynać 'https://'", 'imageURL');
   }
 
+  onFileSelected($event: Event) {
+    // @ts-ignore
+    const file = $event.target.files[0];
+    this.form.patchValue({
+      'imageURL' : URL.createObjectURL(file)
+    })
+  }
 }

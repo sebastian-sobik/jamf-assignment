@@ -42,12 +42,26 @@
         <label class="input__label" for="product-image-url">Adres URL obrazka</label>
         <span class="input__message">Pole wymagane</span>
       </p>
-      <input
-        type="url"
-        id="product-image-url"
-        formControlName="imageURL"
-        aria-required="true"
-      >
+      <div class="input_image_box">
+        <input
+          type="url"
+          id="product-image-url"
+          formControlName="imageURL"
+          aria-required="true"
+        >
+        <label class="image_label"
+               tabindex="3"
+               aria-hidden="true"
+               for="image"
+        ><img src="../../assets/image-fill.svg" alt="Image icon"></label>
+        <input aria-hidden="true" hidden="hidden"
+           id="image"
+           type="file"
+           (change)="onFileSelected($event)"
+           accept="image/png, image/jpeg"
+           formControlName="imageFile"
+        >
+      </div>
       <app-error *ngIf="getUrlInputError() as message" [message]="message"></app-error>
     </div>
     <button
