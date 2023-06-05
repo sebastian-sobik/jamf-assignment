@@ -83,6 +83,23 @@ form {
   margin-bottom: $margin-petit;
 }
 
+.input_image_box {
+  position: relative;
+}
+
+.image_label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.2rem;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .input__label {
   letter-spacing: -2%;
 }
@@ -99,5 +116,6 @@ form {
 @media (max-width: 520px) {
   .slider {
     padding: $padding-slider-S;
+    max-width: 95%;
   }
 }
