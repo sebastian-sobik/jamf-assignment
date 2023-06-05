@@ -26,6 +26,10 @@ export class ProductsService {
       ...product
     });
 
-    this.products.next(_products);
+    this.setProducts(_products);
+  }
+
+  setProducts(products: Product[]) {
+    this.products.next(products);
   }
 }

@@ -27,11 +27,13 @@
 }
 
 .product__image {
+  overflow: hidden;
   display: flex;
   justify-content: center;
+
   height: $item-image-height;
+
   margin-bottom: $margin-small;
-  overflow: hidden;
 
   & > img {
     transition: all 200ms ease-out;
@@ -43,6 +45,7 @@
   font-weight: $font-weight-product-title;
   font-size: $font-size-product-name;
   margin-bottom: $margin-small;
+  overflow-wrap: break-word;
 }
 
 .product__price {
