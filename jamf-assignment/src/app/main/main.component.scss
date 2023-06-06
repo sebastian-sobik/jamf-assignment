@@ -18,7 +18,6 @@
 
 .intro__heading {
   width: 90%;
-  letter-spacing: -2%;
 }
 
 .intro {
@@ -92,7 +91,8 @@
     margin-bottom: $margin-medium;
   }
 
-  .intro__button, .router__button {
+  .intro__button,
+  .router__button {
     width: 100%;
     margin-bottom: $margin-small;
   }
@@ -128,14 +128,16 @@
     display: none;
   }
 
-  .intro__button, .router__button {
+  .intro__button,
+  .router__button {
     width: 40%;
     margin-bottom: 0;
   }
 }
 
 @media (max-width: 600px) {
-  .intro__button, .router__button {
+  .intro__button,
+  .router__button {
     width: 100%;
     margin-bottom: $margin-small;
   }
