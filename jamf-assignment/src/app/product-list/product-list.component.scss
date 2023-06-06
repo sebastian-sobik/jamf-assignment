@@ -3,53 +3,10 @@
 
 .products__list {
   display: grid;
-  //TODO: setup min width
   grid-template-columns: repeat(auto-fill, minmax(200px, $card-width));
   gap: $items-horizontal-gap;
 
   @media (max-width: 1070px) {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
-}
-
-.product {
-  height: $card-height;
-  width: 100%;
-
-  &:hover {
-    cursor: pointer;
-
-    .product__image > img {
-      transform: scale(1.2);
-      filter: brightness(1.05);
-    }
-  }
-}
-
-.product__image {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-
-  height: $item-image-height;
-
-  margin-bottom: $margin-small;
-
-  & > img {
-    transition: all 200ms ease-out;
-  }
-}
-
-.product__name {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-product-title;
-  font-size: $font-size-product-name;
-  margin-bottom: $margin-small;
-  overflow-wrap: break-word;
-}
-
-.product__price {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-product-price;
-  font-size: $font-size-product-price;
 }

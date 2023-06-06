@@ -12,30 +12,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 580px auto;
+  grid-template-columns: $left-side-width auto;
   gap: $main-grid-gap;
-}
-
-.img-container {
-  position: relative;
-  width: $decoration-width;
-  top: $img-offset;
-}
-
-.decorator {
-  width: 100%;
-  height: 120%;
-  background-color: $clr-bg-decoration;
-
-  position: absolute;
-  top: 50%;
-  left: 580px - $decoration-width;
-  z-index: -1;
-  transform: translateY(-50%);
 }
 
 .intro__heading {
   width: 90%;
+  letter-spacing: -2%;
 }
 
 .intro {
@@ -55,11 +38,11 @@
     left: -2.5rem - $margin-small;
     z-index: -1;
   }
-}
 
-.intro__text {
-  position: relative;
-  width: 80%;
+  .intro__text {
+    position: relative;
+    width: 80%;
+  }
 }
 
 .intro__button {
@@ -77,6 +60,26 @@
   margin-bottom: 150px;
 }
 
+
+.img-container {
+  width: $decoration-width;
+  position: relative;
+  top: $img-offset;
+
+  .decorator {
+    width: 100%;
+    height: 120%;
+    background-color: $clr-bg-decoration;
+
+    position: absolute;
+    top: 50%;
+    left: $left-side-width - $decoration-width;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+}
+
+
 // Media queries
 
 @media (max-width: 1200px){
@@ -89,7 +92,7 @@
     margin-bottom: $margin-medium;
   }
 
-  .intro button {
+  .intro__button, .router__button {
     width: 100%;
     margin-bottom: $margin-small;
   }
@@ -125,14 +128,14 @@
     display: none;
   }
 
-  .intro button {
+  .intro__button, .router__button {
     width: 40%;
     margin-bottom: 0;
   }
 }
 
 @media (max-width: 600px) {
-  .intro button {
+  .intro__button, .router__button {
     width: 100%;
     margin-bottom: $margin-small;
   }

@@ -28,20 +28,12 @@
   }
 }
 
-
-.slider form {
-  input {
-    width: 100%;
-  }
-}
-
 .slider__nav {
   position: absolute;
   top: 2.5rem;
   right: 2.5rem;
 
-  display: flex;
-  justify-content: right;
+  @include flex(right, null);
 
   margin-bottom: $margin-big;
 
@@ -53,11 +45,49 @@
     }
   }
 }
+
 form {
   .form__group {
     margin-bottom: $margin-medium;
 
+    .input__info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $margin-petit;
+
+      .input__label {
+        letter-spacing: -2%;
+      }
+
+      .input__message {
+        color: $clr-input-message;
+        font-size: $font-size-input-message;
+
+        &.error {
+          color: $clr-input-box-error;
+        }
+      }
+    }
+
+    .input_image_box {
+      position: relative;
+    }
+
+    .image_label {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      padding: 0.2rem;
+      background-color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     input {
+      width: 100%;
       height: $form-input-height;
       padding: $margin-petit $margin-small;
 
@@ -73,43 +103,6 @@ form {
 
   button {
     @include defaultBtn;
-  }
-}
-
-
-.input__info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: $margin-petit;
-}
-
-.input_image_box {
-  position: relative;
-}
-
-.image_label {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-
-  padding: 0.2rem;
-  background-color: white;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.input__label {
-  letter-spacing: -2%;
-}
-
-.input__message {
-  color: $clr-input-message;
-  font-size: $font-size-input-message;
-
-  &.error {
-    color: $clr-input-box-error;
   }
 }
 
