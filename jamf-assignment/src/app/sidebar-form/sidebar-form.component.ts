@@ -10,9 +10,7 @@ import {SidebarStateService} from "../sidebar-state.service";
 })
 export class SidebarFormComponent {
   form: FormGroup;
-  formData : FormData;
   closed$ = this.sidebarState.selectState$();
-  errorMessage = 'Błedny adres URL'
 
   constructor(protected fb: FormBuilder,
               protected productsFacade: ProductFacadeService,
@@ -32,8 +30,6 @@ export class SidebarFormComponent {
   }
 
   onSubmit() {
-    this.formData  = new FormData();
-    this.formData.append('file', this.form.get('imageFile')?.value);
     if (this.form.valid) {
       this.productsFacade.addProduct(this.form.value)
     }

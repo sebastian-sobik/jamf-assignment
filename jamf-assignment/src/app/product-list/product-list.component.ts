@@ -8,9 +8,4 @@ import {Product} from "../shared/product.model";
 })
 export class ProductListComponent {
   @Input() products : Product[];
-
-  defaultImage($event: ErrorEvent) {
-    // @ts-ignore
-    $event.target.src = "http://www.mdtop.com.br/wp-content/uploads/2021/01/placeholder-images-image_large.png";
-  }
 }

@@ -12,6 +12,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { MainComponent } from './main/main.component';
 import { AllItemsComponent } from './all-items/all-items.component';
 import { ErrorComponent } from './sidebar-form/error/error.component';
+import { ProductComponent } from './product-list/product/product.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -24,6 +25,7 @@ registerLocaleData(localeFr, 'fr');
     MainComponent,
     AllItemsComponent,
     ErrorComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

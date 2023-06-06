@@ -1,0 +1,11 @@
+<div class="product" aria-label="Product">
+  <div class="product__image">
+    <img
+      src="{{product.imageURL}}"
+      alt="{{product.name}}"
+      (error)="defaultImage($event)"
+    >
+  </div>
+  <h3 class="product__name" aria-label="Product name">{{product.name}}</h3>
+  <span class="product__price" aria-label="Product price">{{product.price | currency:'PLN':'zł':'.2-2':'fr'}}</span>
+</div>

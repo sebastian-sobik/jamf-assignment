@@ -1,0 +1,44 @@
+@use "../../../_variables.scss" as *;
+@use "../../../_functions.scss" as *;
+
+.product {
+  height: $card-height;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+
+    .product__image > img {
+      transform: scale(1.2);
+      filter: brightness(1.05);
+    }
+  }
+}
+
+.product__image {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  height: $item-image-height;
+
+  margin-bottom: $margin-small;
+
+  & > img {
+    transition: all 200ms ease-out;
+  }
+}
+
+.product__name {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-product-title;
+  font-size: $font-size-product-name;
+  margin-bottom: $margin-small;
+  overflow-wrap: break-word;
+}
+
+.product__price {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-product-price;
+  font-size: $font-size-product-price;
+}

@@ -31,7 +31,6 @@
 // Font weight
     $font-weight-regular: 400;
     $font-weight-bold: 700;
-
     $font-weight-paragraph:     $font-weight-regular;
     $font-weight-headline:      $font-weight-bold;
     $font-weight-header:        $font-weight-bold;
@@ -39,7 +38,6 @@
     $font-weight-product-price: $font-weight-bold;
 
 // Component size
-
     $wrapper-width: 1200px;
 
     $header-height: 130px;
@@ -47,32 +45,27 @@
     $form-width: 630px;
     $form-input-height: 56px;
 
-    //$headline-image-width: 478px;
-    //$headline-image-height: 758px;
-
     $card-height: 392px;
     $card-width: 280px;
     $item-image-width: 280px;
     $item-image-height: 280px;
 
     $decoration-width: 480px;
+    $left-side-width: 580px;
     $img-offset: -26px;
-    //$decoration-height: 920px;
 
     $button-width: 220px;
     $button-height: 56px;
 
-
 // Margin
     $margin-huge: 7.625rem;
-    //$margin-huge: 8.75rem;
-    //$margin-big: 6rem;
     $margin-big: 4.6875rem;
     $margin-medium: 3.375rem;
     $margin-small: 1.25rem;
     $margin-petit: 0.5rem;
 
-    //$items-vertical-gap: 2.125rem;
+// Gap
+
     $items-horizontal-gap: 1.3125rem;
     $main-grid-gap: 1.5625rem;
 
@@ -81,7 +74,6 @@
     $padding-slider-S: 150px 2.25rem;
     $padding-app-M   : 0 50px;
     $padding-app-S   : 0 20px;
-
 
 // Shadow
     $box-shadow-slider: -10px 0 10px 0 rgba(0, 0, 0, 0.1);

@@ -18,7 +18,4 @@ export class SidebarStateService {
   close(): void {
     this.isClosed.next(true);
   }
-
-  constructor() {
-  }
 }
