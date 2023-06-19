@@ -22,7 +22,7 @@ export class SidebarFormComponent {
       imageURL: ['',
         Validators.compose([
           Validators.required,
-          Validators.pattern("^blob:|https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)")
+          Validators.pattern("^blob:|https?:\\/\\/?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)")
         ])
       ],
       imageFile: ['']
@@ -67,10 +67,13 @@ export class SidebarFormComponent {
   }
 
   onFileSelected($event: Event) {
-    // @ts-ignore
-    const file = $event.target.files[0];
-    this.form.patchValue({
-      'imageURL' : URL.createObjectURL(file)
-    })
+    const element = $event.target as HTMLInputElement;
+    const files = element.files;
+    const file = (files && files.length > 0) ? files[0] : null;
+    if(file && (file.type === "image/png" || file.type === "image/jpeg")) {
+      this.form.patchValue({
+        'imageURL' : URL.createObjectURL(file)
+      })
+    }
   }
 }
